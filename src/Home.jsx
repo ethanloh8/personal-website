@@ -127,10 +127,6 @@ const Home = () => {
           </SimpleGrid>
         )}
       </Box>
-      <Helmet>
-        <title>ethan loh</title>
-        <link rel="icon" type="image/png" href="/iconhead.png" />
-      </Helmet>
     </Box>
   );
 };
