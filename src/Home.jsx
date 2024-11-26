@@ -4,7 +4,6 @@ import Terminal from './components/Terminal';
 import LeftBar from './components/LeftBar';
 import RightBar from './components/RightBar';
 import RepoInfoBox from './components/RepoInfoBox';
-import Helmet from 'react-helmet';
 
 const Home = () => {
   const [navBarTop, setNavBarTop] = useState('2vh');
@@ -56,23 +55,26 @@ const Home = () => {
       <LeftBar top={navBarTop} />
       <RightBar top={navBarTop} />
       <Box
+        paddingTop={{ base: '10vh', md: '0'}}
+        // paddingX={{ base: '40px', md: '30'}}
         id="space"
-        bgImage="url('/space-kurz.png')"
+        bgImage="url('./space-kurz.png')"
         bgSize="115%"
         bgAttachment="fixed"
         height="100vh"
         zIndex="-1"
         width="100%"
         display="flex"
-        flexDir="row"
+        flexDir={{ base: 'column', md: 'row' }}
         justifyContent="center"
         alignItems="center"
+        rowGap="10px"
         columnGap="25vh"
         paddingBottom="10vh"
       >
         <Terminal />
         <Image
-          src="/formal.jpg"
+          src="./formal.jpg"
           bgSize="120%"
           top="32vh"
           left="65%"
@@ -83,22 +85,25 @@ const Home = () => {
           objectFit="cover"
         />
       </Box>
-      <Image position="absolute" top="70vh" src="/clouds.png" width="100%" zIndex="3" />
+      <Image position="absolute" top={{ base: '90vh', md: '70vh' }} src="./clouds.png" width="100%" zIndex="3" />
       <Box
         position="absolute"
         top="100vh"
         width="100%"
         height="120vh"
         bgGradient="linear(to-b, #483C6C, #5b6078)"
-        py="40vh"
         color="white"
         display="flex"
-        flexDir="row"
+        flexDir={{ base: 'column', md: 'row' }}
         columnGap="100px"
         justifyContent="center"
         id="repo-section"
+        paddingX={{ base: '10%', md: '0' }}
+        paddingY={{ base: '150%', md: '40vh' }}
+        alignItems={{ base: 'center', md: 'start' }}
+        rowGap="25px"
       >
-        <Box maxWidth="40%" fontFamily="Source Code Pro" display="flex" flexDir="column">
+        <Box maxWidth={{ base: '80%', md: '40%' }} fontFamily="Source Code Pro" display="flex" flexDir="column">
           <Text fontSize="lg" fontWeight="bold" color="#f28fad" mb="4">
             OPEN-SOURCE
           </Text>
@@ -108,10 +113,10 @@ const Home = () => {
           <Text fontSize="lg" lineHeight="1.8" color="#cdd6f4">
             i love open-source work; they are the foundation of many high-level projects. here's some i've worked on.
           </Text>
-          <Box position="relative">
-            <Image position="absolute" src="/blob3.png" width="25vh" top="3vh" borderRadius="10px" />
-            <Image position="absolute" src="/blob4.png" width="25vh" left="25%" top="15vh" borderRadius="10px" />
-            <Image position="absolute" src="/blob2.png" width="25vh" left="50%" top="-2vh" borderRadius="10px" />
+          <Box position="relative" display={{ base: 'none', md: 'flex' }}>
+            <Image position="absolute" src="./blob3.png" width="25vh" top="3vh" borderRadius="10px" />
+            <Image position="absolute" src="./blob4.png" width="25vh" left="25%" top="15vh" borderRadius="10px" />
+            <Image position="absolute" src="./blob2.png" width="25vh" left="50%" top="-2vh" borderRadius="10px" />
           </Box>
         </Box>
         {showRepoBoxes && (

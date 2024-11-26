@@ -37,7 +37,7 @@ const Terminal = () => {
   const typeNextCharacter = () => {
     const typing = typingRef.current;
     const speed = 88;
-    const hang = 5000;
+    const hang = 1000;
     if (typingDirection === "typing") {
       if (charIndex < outputs[outputIndex].length) {
         typing.textContent += outputs[outputIndex].charAt(charIndex);
@@ -72,21 +72,20 @@ const Terminal = () => {
 
   return (
     <Box
-      top="15vh"
-      left="30vh"
       width="85vh"
       height="60vh"
       borderRadius="15px"
       border="1px solid white"
-      bgImage="url('/macchiato_term.jpg')"
+      bgImage="url('./macchiato_term.jpg')"
       bgSize="cover"
       fontFamily="Source Code Pro"
       display="flex"
       flexDir="column"
       rowGap="30px"
+      justifyContent="center"
       alignItems="center"
     >
-      <Text opacity="0" fontSize="38px" textAlign="center" color="#EED49F" marginTop="24%" fontWeight="bold" animation={`${fadeIn} ease-in 1s 0.5s forwards`}>
+      <Text opacity="0" fontSize="38px" textAlign="center" color="#EED49F" fontWeight="bold" animation={`${fadeIn} ease-in 1s 0.5s forwards`}>
         hi, i'm ethan
       </Text>
       <Text opacity="0" fontSize="18px" textAlign="center" color="#8AADF4" fontWeight="bold" animation={`${fadeIn} ease-in 1s 1s forwards`}>
