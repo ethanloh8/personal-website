@@ -72,8 +72,8 @@ const Terminal = () => {
 
   return (
     <Box
-      width="85vh"
-      height="60vh"
+      width={{ base: '90vw', md: '85vh' }}
+      height={{ base: '50vh', md: '60vh' }}
       borderRadius="15px"
       border="1px solid white"
       bgImage="url('./macchiato_term.jpg')"
@@ -81,25 +81,26 @@ const Terminal = () => {
       fontFamily="Source Code Pro"
       display="flex"
       flexDir="column"
-      rowGap="30px"
+      rowGap={{ base: '20px', md: '30px' }}
       justifyContent="center"
       alignItems="center"
+      padding={{ base: '15px', md: '0' }}
     >
-      <Text opacity="0" fontSize="38px" textAlign="center" color="#EED49F" fontWeight="bold" animation={`${fadeIn} ease-in 1s 0.5s forwards`}>
+      <Text opacity="0" fontSize={{ base: '24px', md: '38px' }} textAlign="center" color="#EED49F" fontWeight="bold" animation={`${fadeIn} ease-in 1s 0.5s forwards`}>
         hi, i'm ethan
       </Text>
-      <Text opacity="0" fontSize="18px" textAlign="center" color="#8AADF4" fontWeight="bold" animation={`${fadeIn} ease-in 1s 1s forwards`}>
+      <Text opacity="0" fontSize={{ base: '14px', md: '18px' }} textAlign="center" color="#8AADF4" fontWeight="bold" animation={`${fadeIn} ease-in 1s 1s forwards`}>
         eecs major @ uc berkeley
       </Text>
       <Text
         ref={typingRef}
-        fontSize="18px"
+        fontSize={{ base: '14px', md: '18px' }}
         color="#A6DA95"
         position="relative"
         display="inline-block"
         _before={{
           content: '">  "',
-          fontSize: "20px",
+          fontSize: { base: '16px', md: '20px' },
           fontWeight: "bold",
           textAlign: "left",
           color: "#ee99a0",

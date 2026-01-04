@@ -31,7 +31,7 @@ const RepoInfoBox = ({ repoName, username, animationDelay = 0 }) => {
   if (loading) {
     return (
       <Box
-        width="340px"
+        width={{ base: '80vw', md: '340px' }}
         height="180px"
         bgGradient="linear(to-b, #483C6C, #5b6078)"
         borderRadius="md"
@@ -49,7 +49,7 @@ const RepoInfoBox = ({ repoName, username, animationDelay = 0 }) => {
   if (!repoData) {
     return (
       <Box
-        width="340px"
+        width={{ base: '80vw', md: '340px' }}
         height="180px"
         bgGradient="linear(to-b, #483C6C, #5b6078)"
         borderRadius="md"
@@ -68,7 +68,7 @@ const RepoInfoBox = ({ repoName, username, animationDelay = 0 }) => {
 
   return (
     <Link
-      width="340px"
+      width={{ base: '80vw', md: '340px' }}
       bg="linear-gradient(145deg, #292c35, #383c46)"
       color="#f5e0dc"
       borderRadius="10px"

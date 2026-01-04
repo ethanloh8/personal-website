@@ -18,7 +18,7 @@ const LeftBar = ({ top }) => {
       position="absolute"
       key={top}
       top={top}
-      display="flex"
+      display={{ base: 'none', md: 'flex' }}
       direction="column"
       height="50px"
       bgGradient="linear(to-r, #f38ba8, #eba0ac, #fab383)"

@@ -20,7 +20,7 @@ const RightBar = ({ top }) => {
       key={top}
       right="0"
       top={top}
-      display="flex"
+      display={{ base: 'none', md: 'flex' }}
       direction="column"
       height="auto"
       bgGradient="linear(to-r, rgba(180, 190, 254, 1), rgba(205, 214, 244, 1), rgba(186, 194, 222, 1))"

@@ -76,10 +76,9 @@ const Home = () => {
         <Image
           src="./formal.jpg"
           bgSize="120%"
-          top="32vh"
-          left="65%"
-          width="35vh"
-          height="35vh"
+          display={{ base: 'none', md: 'block' }}
+          width={{ base: '40vw', md: '35vh' }}
+          height={{ base: '40vw', md: '35vh' }}
           border="1px solid white"
           borderRadius="15px"
           objectFit="cover"
@@ -90,7 +89,7 @@ const Home = () => {
         position="absolute"
         top="100vh"
         width="100%"
-        height="120vh"
+        minHeight={{ base: 'auto', md: '120vh' }}
         bgGradient="linear(to-b, #483C6C, #5b6078)"
         color="white"
         display="flex"
@@ -98,19 +97,20 @@ const Home = () => {
         columnGap="100px"
         justifyContent="center"
         id="repo-section"
-        paddingX={{ base: '10%', md: '0' }}
-        paddingY={{ base: '150%', md: '40vh' }}
+        paddingX={{ base: '5%', md: '0' }}
+        paddingY={{ base: '15vh', md: '40vh' }}
         alignItems={{ base: 'center', md: 'start' }}
-        rowGap="25px"
+        rowGap={{ base: '30px', md: '25px' }}
+        paddingBottom={{ base: '10vh', md: '40vh' }}
       >
-        <Box maxWidth={{ base: '80%', md: '40%' }} fontFamily="Source Code Pro" display="flex" flexDir="column">
-          <Text fontSize="lg" fontWeight="bold" color="#f28fad" mb="4">
+        <Box maxWidth={{ base: '90%', md: '40%' }} fontFamily="Source Code Pro" display="flex" flexDir="column" textAlign={{ base: 'center', md: 'left' }}>
+          <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight="bold" color="#f28fad" mb="4">
             OPEN-SOURCE
           </Text>
-          <Text fontSize="3xl" fontWeight="bold" color="#d9e0ee" mb="4">
+          <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="bold" color="#d9e0ee" mb="4">
             my open-source projects
           </Text>
-          <Text fontSize="lg" lineHeight="1.8" color="#cdd6f4">
+          <Text fontSize={{ base: 'md', md: 'lg' }} lineHeight="1.8" color="#cdd6f4">
             i love open-source work; they are the foundation of many high-level projects. here's some i've worked on.
           </Text>
           <Box position="relative" display={{ base: 'none', md: 'flex' }}>
@@ -121,9 +121,9 @@ const Home = () => {
         </Box>
         {showRepoBoxes && (
           <SimpleGrid
-            rows={[1, 2, 3]}
-            spacing="6"
-            px="8"
+            columns={{ base: 1, md: 1 }}
+            spacing={{ base: '4', md: '6' }}
+            px={{ base: '0', md: '8' }}
             fontFamily="system-ui"
           >
             <RepoInfoBox repoName="nendaiki" username="ethanloh8" />
